@@ -27,7 +27,12 @@ function getMostUsedWordsArray(wordsArray) {
 		.map((word) => ({ word, usedTimes: wordsObj[word] }));
 }
 
-function getMostUsedWords() {
+function getMostUsedWords(
+	getAndFormatText,
+	getWordsArray,
+	removeEmptyFromArray,
+	getMostUsedWordsArray
+) {
 	const text = getAndFormatText("text.txt");
 	const wordsArray = getWordsArray(text);
 	const filteredWordsArray = removeEmptyFromArray(wordsArray);
@@ -35,7 +40,12 @@ function getMostUsedWords() {
 	return mostUsedWords;
 }
 
-const mostUsedWords = getMostUsedWords();
+const mostUsedWords = getMostUsedWords(
+	getAndFormatText,
+	getWordsArray,
+	removeEmptyFromArray,
+	getMostUsedWordsArray
+);
 
 console.log(
 	mostUsedWords
