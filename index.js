@@ -30,7 +30,6 @@ function getMostUsedWords(wordsArray) {
 const text = getAndFormatText("text.txt");
 const wordsArray = getWordsArray(text);
 const filteredWordsArray = removeEmptyFromArray(wordsArray);
-console.log(filteredWordsArray);
 const mostUsedWords = getMostUsedWords(filteredWordsArray);
 
 console.log(
