@@ -17,10 +17,10 @@ function removeEmptyFromArray(wordsArray) {
 }
 
 function getMostUsedWordsArray(wordsArray) {
-	let wordsObj = {};
-	wordsArray.forEach((word) => {
-		wordsObj[word] = wordsObj[word] ? wordsObj[word] + 1 : 1;
-	});
+	const wordsObj = wordsArray.reduce(
+		(acc, word) => ({ ...acc, [word]: acc[word] ? acc[word] + 1 : 1 }),
+		{}
+	);
 
 	return Object.keys(wordsObj)
 		.sort((a, b) => wordsObj[b] - wordsObj[a])
